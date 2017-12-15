@@ -40,10 +40,9 @@ template 'marathon-wrapper' do
   group    'root'
   mode     '0755'
   source   'wrapper.erb'
-  variables(lazy do
-    { jar:    ::Dir.glob("#{node['marathon']['home']}/*#{node['marathon']['version']}/target/*/*.jar").first.to_s,
-      jvm:    node['marathon']['jvm'],
-      flags:  node['marathon']['flags'],
-      syslog: node['marathon']['syslog'] }
-  end)
+  variables({
+    mesos_bin:"#{node['marathon']['home']}/marathon-#{node['marathon']['version']}/bin/marathon",
+    flags:  node['marathon']['flags'],
+    syslog: node['marathon']['syslog']
+  })
 end

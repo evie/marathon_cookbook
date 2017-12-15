@@ -1,10 +1,10 @@
 default['java']['jdk_version']            = '8'
 
 # Marathon package
-default['marathon']['version']            = '1.3.5'
+default['marathon']['version']            = '1.5.2'
 default['marathon']['source']['url']      =
-  "http://downloads.mesosphere.com/marathon/v#{node['marathon']['version']}/marathon-#{node['marathon']['version']}.tgz"
-default['marathon']['source']['checksum'] = '298723dd54fd8c65c4cd9a052ca632a21e2d95133e328370fe2edede94a1804e'
+  "https://downloads.mesosphere.com/marathon/releases/#{node['marathon']['version']}/marathon-#{node['marathon']['version']}.tgz"
+default['marathon']['source']['checksum'] = '3c3bd07dee3b6499511a7725f2cd6a8267ff18626cb51d92b5dd8e36ac03147c'
 default['marathon']['syslog']             = true
 
 # Marathon user and directories
